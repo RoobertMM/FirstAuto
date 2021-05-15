@@ -19,35 +19,23 @@ public class TestPlan {
     public static void searchForProduct(){
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        webForm.populateWebsiteUrl();
-        webForm.submitItemUsingButton();
+        webForm.searchField();
+        webForm.ItemUsingButton();
+
     }
-    @Test(testName= "Search URL")
+    @Test(testName="Search URL")
     public static void searchForProduct1(){
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        webForm.populateWebsiteName();
-        webForm.submitItemUsingButton();
+        webForm.settodaysDeals();
+        webForm.Books();
+        webForm.First();
     }
-    @Test(testName= "Search URL")
+    @Test(testName = "Search URL")
     public static void searchForProduct2(){
         driver.get(Utils.BASE_URL);
         MainPage webForm = new MainPage(driver);
-        webForm.populateWebsiteName();
-        webForm.populateWebsiteUrl();
-        webForm.submitItemUsingButton();
-        for (int i = 0; i < 50; i++) {
-            webForm.submitItemUsingButton();
-        }
-        webForm.deleteThirdLine();
-        webForm.visitingSite();
-
-    }
-    @Test(testName= "Search URL")
-    public static void searchForProduct3(){
-        driver.get(Utils.BASE_URL);
-        MainPage webForm = new MainPage(driver);
-        webForm.submitItemUsingButton();
+        webForm.forCostumerService();
     }
 
 

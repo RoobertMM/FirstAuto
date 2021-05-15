@@ -8,31 +8,34 @@ public class MainPage extends PageObject{
     public MainPage(WebDriver driver){
         super(driver);
     }
-    private final String Website_Name = "Emag";
+    private final String Game_Name = "Iphone XR";
     private final String VALID_URL = "www.emag.com";
 
-    @FindBy(xpath = "//*[@id=\"siteName\"]")
-    private WebElement websiteName;
 
-    @FindBy(xpath = "//*[@id=\"urlName\"]")
-    private WebElement websiteUrl;
+    @FindBy(xpath = "//*[@id=\"twotabsearchtextbox\"]")
+    private WebElement  SearchField;
 
-    @FindBy(xpath = "//*[@id=\"myForm\"]/button")
-    private WebElement submitButton;
-    @FindBy(xpath= "//*[@id=\"bookmarksOutput\"]/div[4]/h3/a[2]")
-    private WebElement deleteThirdLine3;
-    @FindBy(xpath = "//*[@id=\"bookmarksOutput\"]/div[1]/h3/a[1]")
-    private WebElement visitSite;
 
-    public void visitingSite(){this.visitSite.click();}
-    public void deleteThirdLine(){this.deleteThirdLine3.click();}
-    public void populateWebsiteName(){
-        this.websiteName.sendKeys(Website_Name);
-    }
-    public void populateWebsiteUrl(){
-        this.websiteUrl.sendKeys(VALID_URL);
-    }
-    public void submitItemUsingButton(){
-        this.submitButton.click();
-    }
+
+    @FindBy(xpath = "//*[@id=\"nav-search-submit-button\"]")
+    private WebElement useingButton;
+
+    @FindBy(xpath = "//*[@id=\"nav-xshop\"]/a[1]")
+    private WebElement TodaysDeals;
+
+    @FindBy(xpath = "//*[@id=\"nav-xshop\"]/a[2]")
+    private WebElement CostumerService;
+
+    @FindBy (xpath = "//*[@id=\"widgetFilters\"]/div[1]/div[2]/span[6]/div/label/input")
+    private WebElement Book;
+
+    @FindBy (xpath = "//*[@id=\"dealImage\"]/div/div/div[2]")
+    private WebElement FirstPick;
+
+    public void First(){this.FirstPick.click();}
+    public void Books(){this.Book.click();}
+    public void forCostumerService(){this.CostumerService.click();}
+    public void settodaysDeals(){this.TodaysDeals.click(); }
+    public void searchField(){this.SearchField.sendKeys(Game_Name);}
+    public void ItemUsingButton(){ this.useingButton.click(); }
 }
